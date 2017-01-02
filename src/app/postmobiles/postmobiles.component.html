@@ -1,0 +1,45 @@
+<div class="container" style="padding-top: 50px">
+  <div class="row">
+    <div class="col-md-8 col-md-push-2">
+      <form action="javascript:void(0)" (submit)="onSubmit(model, company,price, colors,processor, display, memory, os, img, details)" >
+        <h1 style="text-align: center;">Post Mobile</h1>
+        <div class="row">
+          <div class="col-md-6 col-xs-12" style="padding-left: 15px; padding-right: 5px">
+            <div class="form-group">
+              <label for="company">Company: </label>
+              <input type="text" class="form-control" id="company" required #company>
+            </div>
+          </div>
+          <div class="col-md-6 col-xs-12" style="padding-left: 15px; padding-right: 5px">
+            <div class="form-group">
+              <label for="model">Model: </label>
+              <input type="text" class="form-control" id="model" required #model>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="details">Description: </label>
+          <textarea name="description" id="details" class="form-control" required #details></textarea>
+        </div>
+        <table class="table table-striped">
+          <tbody><tr><th><label for="inputOs">OS:</label></th><td><input type="text" class="form-control" id="inputOs" required="" #os></td></tr>
+          <tr><th><label for="inputMem">Memory:</label></th><td><input type="text" class="form-control" id="inputMem" required="" #memory></td></tr>
+          <tr><th><label for="inputProc">Processor: </label></th><td><input type="text" class="form-control" id="inputProc" required="" #processor></td></tr>
+          <tr><th><label for="inputDis">Display:</label></th><td><input type="text" class="form-control" id="inputDis" required="" #display></td></tr>
+          <tr><th><label for="inputColor">Colors:</label></th><td><input type="text" class="form-control" id="inputColor" required="" #colors></td></tr>
+          <tr><th><label for="inputMr">Price:</label></th><td>Rs.  <input type="number" class="form-control" style="display: inline; width: 120px" id="inputMr" required="" #price></td></tr>
+          </tbody></table>
+        <div class="form-group">
+
+          <label for="image">Image:</label>
+          <img src="" alt="" #img style="width: 100px; height: 100px;">
+          <br>
+          <br>
+          <input type="file" id="image" required="" (change)="onImageUpload(img, input)" #input>
+
+        </div>
+        <input type="submit" value="Post Ad" class="btn btn-success" style="float: right; margin-bottom: 10px">
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="col-xs-5">
+        <app-recpies-list (recipeSelected)="selectedRecipe = $event"></app-recpies-list>
+    </div>
+    <div class="col-xs-7">
+        <app-recipe-detail [selectedRecipe]="selectedRecipe"></app-recipe-detail>
+    </div>
+</div>
