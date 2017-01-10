@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {AngularFireModule} from "angularfire2";
+// import {AngularFireModule} from "angularfire2";
 import {firebaseConfig} from "./firebase.config";
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -26,6 +26,8 @@ import { AuthService } from "./nav/auth.service";
 import { SignupComponent } from './unprotected/signup.component';
 import { SigninComponent } from './unprotected/signin.component';
 import {DataService} from './data.service';
+import { ForgetpasswordComponent } from './unprotected/forgetpassword.component';
+
 
 
 @NgModule({
@@ -44,7 +46,8 @@ import {DataService} from './data.service';
     ProtectedComponent,
     UnprotectedComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    ForgetpasswordComponent
 
 
   ],
@@ -53,8 +56,7 @@ import {DataService} from './data.service';
     FormsModule,
     HttpModule,
     routing,
-    ReactiveFormsModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    ReactiveFormsModule
   ],
   providers: [ShoppingListService, RecpieService ,AuthService,AuthGuard,DataService],
   bootstrap: [AppComponent]

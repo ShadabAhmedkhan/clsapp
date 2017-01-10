@@ -1,29 +1,30 @@
-<div class="row">
-    <div class="col-xs-12">
+<div class="card-panel container col s6 m9 l6 ">
+    <div class=" col s5 m5 l5">
         <!--<img  src="{{selectedRecipe.imagePath}}" class="img-responsive"></img>-->
-        <img class="img-responsive" src="{{selectedRecipe?.imagePath}}" style="max-height: 50px;" alt="" />
+        <img class="img-responsive" src="{{selectedRecipe?.imagePath}}" style="max-height: 520px;" alt="" />
+      <div class="row">
+        <div class=" col s5 m5 l5">
+          <h1>{{selectedRecipe?.name}}</h1>
+        </div>
+      </div>
+    </div>
+  <div class="row">
+
+    <div class="col s12 m12 l12 ">
+        <button class="btn waves-effect waves-teal" (click)="onAddToShoppingList()">To Shopping List</button>
+        <button class="btn waves-effect waves-teal">Edit</button>
+        <button class="btn waves-effect waves-teal">Delete</button>
 
     </div>
-</div>
-<div class="row">
-    <div class="col-xs-12">
-        <h1>{{selectedRecipe?.name}}</h1>
-    </div>
-    <div class="col-xs-12">
-        <button class="btn btn-success" (click)="onAddToShoppingList()">To Shopping List</button>
-        <button class="btn btn-primary">Edit</button>
-        <button class="btn btn-danger">Delete</button>
+  </div>
 
-    </div>
-</div>
-<hr>
 <div class="row">
-    <div class="col-xs-12">
+    <div class="col s12 m12 l12">
         <p>{{selectedRecipe?.description}}</p>
     </div>
 </div>
 <div class="row">
-    <div class="col-xs-12">
+    <div class="  col s12 m12 l12">
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let item of selectedRecipe?.ingredients">{{item.name}} ({{item.amount}})</li>
         </ul>
@@ -31,8 +32,7 @@
 </div>
 
 
-
-
+</div>
 
 
 

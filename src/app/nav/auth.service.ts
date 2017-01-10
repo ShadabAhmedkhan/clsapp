@@ -1,3 +1,4 @@
+
 import { Injectable } from "@angular/core";
 
 import { User } from "../shared/user.interface";
@@ -12,7 +13,7 @@ export class AuthService {
   signupUser(user: User) {
     firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
       .then(success =>{
-        this.router.navigate(['/signin']);
+        this.router.navigate(['signin']);
       })
       .catch(function (error) {
         alert(error);
@@ -23,7 +24,7 @@ export class AuthService {
   signinUser(user: User) {
     firebase.auth().signInWithEmailAndPassword(user.email, user.password)
       .then(success =>{
-        this.router.navigate(['/recipes']);
+        this.router.navigate(['recipes']);
       })
       .catch(function (error) {
         alert(error);
@@ -35,10 +36,9 @@ export class AuthService {
   }
 
 
-
   logout() {
     firebase.auth().signOut();
-    this.router.navigate(['/signin']);
+    this.router.navigate(['signin']);
   }
 
 
@@ -52,4 +52,19 @@ export class AuthService {
       return false;
     }
   }
-}
+
+  forgetPassword(user: User){
+
+  var newPassword = firebase.auth().currentUser;
+alert("fgfd");
+    firebase.auth().updatePassword(newPassword).then(success =>{
+      this.router.navigate(['signin']);
+    })
+      .catch(function (error) {
+        alert(error);
+
+        // console.log(error);
+      });
+
+  }
+ }

@@ -6,9 +6,10 @@ import { environment } from './environments/environment';
 import { AppModule } from './app/';
 import {ShoppingListService} from "./app/shopping-list/shopping-list.service";
 import {routes} from "./app/app.routes";
+import {AuthService} from "./app/nav/auth.service";
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule, [routes,ShoppingListService]);
+platformBrowserDynamic().bootstrapModule(AppModule, [routes,ShoppingListService,AuthService]);

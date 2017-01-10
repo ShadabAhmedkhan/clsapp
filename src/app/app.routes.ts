@@ -8,6 +8,7 @@ import { SignupComponent } from "./unprotected/signup.component";
 import { SigninComponent } from "./unprotected/signin.component";
 import { ProtectedComponent } from "./protected/protected.component";
 import { AuthGuard } from "./nav/auth.guard";
+import {ForgetpasswordComponent} from "./unprotected/forgetpassword.component";
 
 // const APP_ROUTES: Routes = [
 //
@@ -19,20 +20,23 @@ export const routes:Routes =[
   //   redirectTo: '/recipes',
   //   pathMatch: 'full'
   // },
-  {path: '', redirectTo: '/signup', pathMatch: 'full'},
+  {path: '', redirectTo: 'recipes', pathMatch: 'full'},//,canActivate: [AuthGuard]
   {path: 'signup', component: SignupComponent},
   {path: 'signin', component: SigninComponent},
   { path: 'recipes',
-    component: RecpiesComponent,canActivate: [AuthGuard]
+    component: RecpiesComponent //,canActivate: [AuthGuard]
   },
   { path: 'shopping-list',
-    component:ShoppingListComponent ,canActivate: [AuthGuard]
+    component:ShoppingListComponent //,canActivate: [AuthGuard]
   },
   { path: 'postcars',
-    component: PostcarsComponent ,canActivate: [AuthGuard]
+    component: PostcarsComponent //,canActivate: [AuthGuard]
   },
   { path: 'postmobiles',
-    component:PostmobilesComponent,canActivate: [AuthGuard]
+    component:PostmobilesComponent
+  },
+  { path: 'forgetpassword',
+    component:ForgetpasswordComponent
   },
 
 ];
